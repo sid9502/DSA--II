@@ -66,14 +66,17 @@ void inorder_traversal (bst t){
 
 }
 void postorder_traversal(bst t){
+    if (t){
 
     bst temp=t;
-    if (temp->left==NULL){
+    if (temp->left == NULL){
         printf("%d ",temp->data);
         return ;
     }
     postorder_traversal(t->left);
     postorder_traversal(temp->right);
     printf("%d ",temp->data);
+    }
+    
     
 }
