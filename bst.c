@@ -2,7 +2,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
+int max_height (int a ,int b ){
+    if (a>b){
+        return a;
+    }
+    else{
+        return b;
+    }
+}
 void init_bst(bst* t){
     *t = NULL;
     return;
@@ -79,4 +86,29 @@ void postorder_traversal(bst t){
     }
     
     
+}
+int bst_height(bst t){
+    if (t==NULL){
+        return -1;
+    }
+    int height;
+    height=max_height(bst_height(t->left),bst_height(t->right))+1;
+    return height;
+}
+
+int bst_depth(bst t,int val,int l){
+    if (t==NULL){
+        return -1;
+    }
+    if (t->data==val){
+        return l;
+
+    }
+    bst_depth(t->left,val,l+1);
+    bst_right(t->right,val,l+1);
+    return -1;
+
+}
+int depth_node(bst t,int val){
+    return depth_node( t,val,0);
 }
