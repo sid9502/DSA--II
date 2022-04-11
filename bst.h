@@ -11,4 +11,5 @@ void insert(bst* t ,int val);
 void preorder_traversal(bst t);
 void inorder_traversal(bst t);
 void postorder_traversal(bst t);
-
+int bst_height(bst t); 
+int depth_node(bst t ,int val);
